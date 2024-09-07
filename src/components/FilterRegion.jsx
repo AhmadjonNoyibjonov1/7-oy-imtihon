@@ -1,14 +1,14 @@
 const FilterRegion = ({ onSearch, onFilter }) => {
   return (
-    <div className="flex justify-between items-center p-4">
+    <div className="flex flex-col md:flex-row justify-between items-center pb-8 md:pb-12">
       <input
         type="text"
         placeholder="Search for a country..."
-        className="border p-2 w-1/2 text-gray-900 dark:text-white dark:bg-gray-700 rounded w-[480px]"
+        className="p-2 h-14 text-gray-900 dark:text-white dark:bg-gray-700 rounded w-full md:w-[480px]"
         onChange={(e) => onSearch(e.target.value)}
       />
       <select
-        className="border p-2 text-gray-900 dark:text-white dark:bg-gray-700"
+        className="p-2 mt-4 md:mt-0 text-gray-900 dark:text-white dark:bg-gray-700 rounded"
         onChange={(e) => onFilter(e.target.value)}
       >
         <option value="">Filter by Region</option>
@@ -21,5 +21,4 @@ const FilterRegion = ({ onSearch, onFilter }) => {
     </div>
   );
 };
-
 export default FilterRegion;

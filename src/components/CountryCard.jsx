@@ -1,13 +1,29 @@
-const CountryCard = ({ country }) => {
-    return (
-      <div className="border bg-white dark:bg-gray-800 dark:text-white rounded-[8px]">
-        <img src={country.flags.png} alt={country.name.common} className="w-full h-32  rounded-t-[8px]" />
-        <h2 className="ml-4 text-xl font-bold mt-2 text-gray-900 dark:text-white">{country.name.common}</h2>
-        <p className="ml-4 text-gray-700 dark:text-gray-300">Population: {country.population.toLocaleString()}</p>
-        <p className="ml-4 text-gray-700 dark:text-gray-300">Region: {country.region}</p>
-        <p className="ml-4 mb-4 text-gray-700 dark:text-gray-300">Capital: {country.capital?.[0]}</p>
+const CountryCard = ({ country, onClick }) => {
+  return (
+    <div
+      onClick={onClick}
+      className="bg-white dark:bg-gray-800 dark:text-white rounded-lg shadow-lg cursor-pointer w-full sm:w-[300px] md:w-[264px]"
+    >
+      <img
+        src={country.flags.png}
+        alt={country.name.common}
+        className="w-full h-[160px] rounded-t-lg"
+      />
+      <div className="p-4">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+          {country.name.common}
+        </h2>
+        <p className="text-base text-gray-700 dark:text-gray-300">
+          Population: {country.population.toLocaleString()}
+        </p>
+        <p className="text-base text-gray-700 dark:text-gray-300">
+          Region: {country.region}
+        </p>
+        <p className="text-base text-gray-700 dark:text-gray-300">
+          Capital: {country.capital?.[0]}
+        </p>
       </div>
-    );
-  };
-  
-  export default CountryCard;
+    </div>
+  );
+};
+export default CountryCard;
