@@ -48,6 +48,10 @@ const Detailes = () => {
     }
   }, [country]);
 
+  const handleBorderClick = (borderCountry) => {
+    navigate("/detailes", { state: { country: borderCountry } });
+  };
+
   if (loading) {
     return <Loader />;
   }
